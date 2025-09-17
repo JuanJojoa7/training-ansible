@@ -18,9 +18,7 @@ El primer paso consistió en definir el host objetivo para la automatización. S
 *   `172.177.237.92`: Es la dirección IP pública de la VM en Azure.
 *   `ansible_user`: Es el usuario con privilegios de administrador en la VM.
 *   `ansible_ssh_pass`: Es la contraseña para la autenticación del usuario.
-
-
-
+*   
 ## 2. Configuración de Red en Azure Portal
 
 Para que la aplicación desplegada en el contenedor fuera accesible desde internet, fue necesario configurar una regla de entrada en el Grupo de Seguridad de Red (NSG) asociado a la VM. Se creó una regla para permitir el tráfico entrante a través del puerto **8787**.
@@ -33,7 +31,7 @@ Para que la aplicación desplegada en el contenedor fuera accesible desde intern
 *   **Origen:** Cualquiera
 *   **Acción:** Permitir (Allow)
 
-
+![Imagen 1](4ad95324-5dfa-46c6-9b9a-e7f8b3a17da2.jpg)
 
 ## 3. Ejecución de Playbooks de Ansible
 
@@ -50,7 +48,7 @@ ansible-playbook -i inventory/hosts.ini playbooks/install_docker.yml
 
 La ejecución fue exitosa, realizando todos los cambios necesarios en el host remoto.
 
-
+![Imagen 3](7c12c78e-abbc-425b-8d7b-1e8bc269ef99.jpg)
 
 ### 3.2. Despliegue del Contenedor
 
@@ -63,7 +61,7 @@ ansible-playbook -i inventory/hosts.ini playbooks/run_container.yml
 
 El playbook se ejecutó correctamente, confirmando el despliegue del contenedor.
 
-
+![Imagen 4](e9e8820f-3307-4470-8c73-e927fcbfb559.jpg)
 
 ## 4. Resultado Final
 
@@ -72,7 +70,7 @@ Tras completar exitosamente los pasos de automatización y la configuración de 
 El resultado confirma que el contenedor se está ejecutando correctamente y que el puerto ha sido expuesto de manera adecuada, mostrando la aplicación funcional.
 
 
-
+![Imagen 2](4bfcf96b-ad69-43c6-987f-37e27d21dda7.jpg)
 
 
 ## Conclusión
